@@ -77,5 +77,8 @@ if __name__ == '__main__':
     # check_my_prediction(
     #     myToken, '2022-09-23', '2022-09-29', 0)
 
+    # check_my_prediction(
+    #     myToken, '2022-09-30', '2022-10-02', 1, latitude=24.780000, longitude=98.770000, magnitude=4.5)
+
     check_my_prediction(
-        myToken, '2022-09-30', '2022-10-02', 1, latitude=24.780000, longitude=98.770000, magnitude=4.5)
+        myToken, '2022-10-03', '2022-10-09', 0)
