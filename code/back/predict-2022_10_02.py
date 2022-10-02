@@ -9,10 +9,10 @@ from xml.dom import minidom
 day = datetime.datetime.strftime(datetime.datetime.now(), "%Y_%m_%d")
 print(day)
 
-os.system(f"rm -rf eqList/eqList{day}.xls")
-os.system(f"cp /Users/ivan/Downloads/eqList{day}.xls eqList/eqList{day}.xls")
+os.system(f"rm -rf eqList/eqList-day.xls")
+os.system(f"cp /Users/ivan/Downloads/eqList{day}.xls eqList/eqList-day.xls")
 print(os.listdir("eqList/"))
-aeta = f"eqList/eqList{day}.xls"
+aeta = f"eqList/eqList-day.xls"
 print(aeta)
 
 N = 7
