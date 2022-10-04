@@ -16,7 +16,7 @@ aeta = f"eqList/eqList-day.xls"
 print(aeta)
 
 N = 7
-T = 15
+T = 20
 # 经度
 lonL, lonH = 98, 107
 # 纬度
