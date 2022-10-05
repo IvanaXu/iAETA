@@ -1,7 +1,6 @@
 import os
 import xml
 import datetime
-import numpy as np
 import pandas as pd
 from tqdm import tqdm
 from xml.dom import minidom
@@ -34,7 +33,7 @@ for nRow, iRow in enumerate(Row):
         idata = []
         for jRow in iRow.getElementsByTagName("Cell"):
             idata.append(jRow.childNodes[0].childNodes[0].data)
-        data.append([float(dj) if nj in [1, 2, 3, 4] else str(dj) for nj ,dj in enumerate(idata)])
+        data.append([float(dj) if nj in [1, 2, 3, 4] else str(dj) for nj, dj in enumerate(idata)])
 
 data = pd.DataFrame(data, columns=cols)
 print(data.dtypes)
@@ -117,17 +116,17 @@ for STATION in tqdm(data.head(T)["参考位置"]):
         as_index=False
     ).agg(
         {
-        "K": "sum",
-        "震级(M)": "mean",
-        "纬度(°)": "mean",
-        "经度(°)": "mean",
+            "K": "sum",
+            "震级(M)": "mean",
+            "纬度(°)": "mean",
+            "经度(°)": "mean",
     })
 
     k2data["参考位置"] = STATION
     k2data["K%"] = k2data["K"]/idata.shape[0]
     k2data["震级C"] = k2data["震级(M)"].apply(lambda x: "" if x >= 3.5 else "❌")
-    k2data["经度C"] = k2data["经度(°)"].apply(lambda x: "" if x >= lonL and x <= lonH else "❌")
-    k2data["纬度C"] = k2data["纬度(°)"].apply(lambda x: "" if x >= latL and x <= latH else "❌")
+    k2data["经度C"] = k2data["经度(°)"].apply(lambda x: "" if lonL <= x <= lonH else "❌")
+    k2data["纬度C"] = k2data["纬度(°)"].apply(lambda x: "" if latL <= x <= latH else "❌")
     k2data["经纬度解析"] = [regeo(f"{_1},{_2}") for _1, _2 in zip(k2data["经度(°)"], k2data["纬度(°)"])]
     k2data["经度(°)"] = k2data["经度(°)"].apply(lambda x: f"{x:.6f}")
     k2data["纬度(°)"] = k2data["纬度(°)"].apply(lambda x: f"{x:.6f}")
@@ -165,9 +164,9 @@ check_my_prediction(myToken, '{day1}', '{dayn}', 1, latitude=$_1, longitude=$_2,
 endata = endata[endata["震级C"] != "❌"]
 for _1, _2, _3 in zip(endata["纬度(°)"], endata["经度(°)"], endata["震级(M)"]):
     print(message
-          .replace("$_1",f"{float(_1):.6f}")
-          .replace("$_2",f"{float(_2):.6f}")
-          .replace("$_3",f"{float(_3):.1f}")
+          .replace("$_1", f"{float(_1):.6f}")
+          .replace("$_2", f"{float(_2):.6f}")
+          .replace("$_3", f"{float(_3):.1f}")
          )
 
 message = f"""
