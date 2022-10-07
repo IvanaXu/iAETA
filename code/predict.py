@@ -175,5 +175,3 @@ check_my_prediction(myToken, '{day1}', '{day7}', 0)
 """
 print(message)
 print()
-
-# os.system(f"cp predict.py back/predict-{day}.py")
