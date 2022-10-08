@@ -47,38 +47,42 @@ if __name__ == '__main__':
 
     # 请修改示例参数 Please modify the sample parameters
     # latitude 22~34/longitude 98~107
+    """
+    check_my_prediction(
+        myToken, '2022-07-31', '2022-08-06', 1, latitude=29.095263, longitude=102.968099, magnitude=3.6)
 
-    # check_my_prediction(
-    #     myToken, '2022-07-31', '2022-08-06', 1, latitude=29.095263, longitude=102.968099, magnitude=3.6)
+    check_my_prediction(myToken, '2022-08-10', '2022-08-16', 0)
 
-    # check_my_prediction(myToken, '2022-08-10', '2022-08-16', 0)
+    check_my_prediction(
+        myToken, '2022-08-17', '2022-08-19', 1, latitude=29.816143, longitude=102.714429, magnitude=3.5)
 
-    # check_my_prediction(
-    #     myToken, '2022-08-17', '2022-08-19', 1, latitude=29.816143, longitude=102.714429, magnitude=3.5)
+    check_my_prediction(
+        myToken, '2022-08-20', '2022-08-26', 0)
 
-    # check_my_prediction(
-    #     myToken, '2022-08-20', '2022-08-26', 0)
+    check_my_prediction(
+        myToken, '2022-08-27', '2022-09-02', 0)
 
-    # check_my_prediction(
-    #     myToken, '2022-08-27', '2022-09-02', 0)
+    check_my_prediction(
+        myToken, '2022-09-03', '2022-09-09', 0)
 
-    # check_my_prediction(
-    #     myToken, '2022-09-03', '2022-09-09', 0)
+    check_my_prediction(
+        myToken, '2022-09-06', '2022-09-06', 1, latitude=27.817500, longitude=102.898500, magnitude=3.8)
 
-    # check_my_prediction(
-    #     myToken, '2022-09-06', '2022-09-06', 1, latitude=27.817500, longitude=102.898500, magnitude=3.8)
+    check_my_prediction(
+        myToken, '2022-09-12', '2022-09-18', 0)
 
-    # check_my_prediction(
-    #     myToken, '2022-09-12', '2022-09-18', 0)
+    check_my_prediction(
+        myToken, '2022-09-20', '2022-09-22', 1, latitude=29.099329, longitude=104.226905, magnitude=3.6)
 
-    # check_my_prediction(
-    #     myToken, '2022-09-20', '2022-09-22', 1, latitude=29.099329, longitude=104.226905, magnitude=3.6)
+    check_my_prediction(
+        myToken, '2022-09-23', '2022-09-29', 0)
 
-    # check_my_prediction(
-    #     myToken, '2022-09-23', '2022-09-29', 0)
-
-    # check_my_prediction(
-    #     myToken, '2022-09-30', '2022-10-02', 1, latitude=24.780000, longitude=98.770000, magnitude=4.5)
+    check_my_prediction(
+        myToken, '2022-09-30', '2022-10-02', 1, latitude=24.780000, longitude=98.770000, magnitude=4.5)
 
     check_my_prediction(
         myToken, '2022-10-03', '2022-10-09', 0)
+    """
+
+    check_my_prediction(
+        myToken, '2022-10-10', '2022-10-16', 0)
