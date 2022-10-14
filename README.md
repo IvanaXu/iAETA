@@ -5,5 +5,5 @@ iAETA
 >
 > http://www.ceic.ac.cn/history
 >
-> ![img.png](data/lookup.png)
+> ![img.png](data/logo.png)
 >
