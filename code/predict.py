@@ -133,7 +133,7 @@ for STATION in tqdm(data.head(T)["参考位置"]):
     k2data["纬度(°)"] = k2data["纬度(°)"].apply(lambda x: f"{x:.6f}")
 
     k2data = k2data[
-        ['参考位置', '震级(M)', '震级C', '纬度(°)', '纬度C', '经度(°)', '经度C', 'K', 'K%','经纬度解析']
+        ['参考位置', '震级(M)', '震级C', '纬度(°)', '纬度C', '经度(°)', '经度C', 'K', 'K%', '经纬度解析']
     ]
     # print(k2data)
     Kdata.append(k2data)
