@@ -88,7 +88,9 @@ if __name__ == '__main__':
         
     check_my_prediction(
         myToken, '2022-10-17', '2022-10-23', 0)
-    """
-
+    
     check_my_prediction(
         myToken, '2022-10-24', '2022-10-30', 1, latitude=29.939062, longitude=102.640174, magnitude=3.8)
+    """
+
+    check_my_prediction(myToken, '2022-11-01', '2022-11-07', 0)
