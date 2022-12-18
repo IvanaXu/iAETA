@@ -103,5 +103,6 @@ if __name__ == '__main__':
     
     check_my_prediction(myToken, '2022-11-24', '2022-11-30', 0)
     check_my_prediction(myToken, '2022-12-01', '2022-12-07', 0)
-    """
     check_my_prediction(myToken, '2022-12-09', '2022-12-15', 0)
+    """
+    check_my_prediction(myToken, '2022-12-19', '2022-12-25', 0)
