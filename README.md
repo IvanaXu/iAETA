@@ -1,5 +1,5 @@
 # iAETA
-iAETA
+iAETA(基于大数据与AI的地震临震预测)
 
 >
 > http://www.ceic.ac.cn/history
