@@ -5,6 +5,38 @@ import pandas as pd
 from tqdm import tqdm
 from xml.dom import minidom
 
+README = """
+# iAETA
+iAETA (基于大数据与AI的地震临震预测)
+
+### 一、最新信息
+#### 1.1 地震信息
+$1.1$
+
+#### 1.2 预测关联
+$1.2$
+
+#### 1.3 最新预测
+```shell
+$1.3$
+```
+
+### 二、相关信息
+* 中国地震台网
+>
+> http://www.ceic.ac.cn/history
+>
+<img src="data/logo.png" width="900px">
+
+* 比赛情况
+>
+> https://platform.aeta.cn/zh-CN/competitionpage/leaderboard
+> 
+<img src="data/rank.png" width="900px">
+"""
+_R1, _R2, _R3 = "", "", ""
+
+
 day = datetime.datetime.strftime(datetime.datetime.now(), "%Y_%m_%d")
 print(day)
 
@@ -38,6 +70,7 @@ for nRow, iRow in enumerate(Row):
 data = pd.DataFrame(data, columns=cols)
 print(data.dtypes)
 print(data.head(T).to_markdown())
+_R1 = data.head(T).to_markdown()
 
 
 def regeo(location):
@@ -150,6 +183,7 @@ endata = pd.merge(
     on="参考位置"
 ).sort_values("#发震时刻#", ascending=False)
 print(endata.to_markdown())
+_R2 = endata.to_markdown()
 
 
 #
@@ -158,21 +192,30 @@ dayn = datetime.datetime.strftime(datetime.datetime.now() + datetime.timedelta(d
 day7 = datetime.datetime.strftime(datetime.datetime.now() + datetime.timedelta(days=7), "%Y-%m-%d")
 print(f">>> {day1} To {day7} / {dayn}")
 
+
+#
 message = f"""
 # 有震预测 earthquake prediction
 check_my_prediction(myToken, '{day1}', '{dayn}', 1, latitude=$_1, longitude=$_2, magnitude=$_3)
 """
 endata = endata[endata["震级C"] != "❌"]
 for _1, _2, _3 in zip(endata["纬度(°)"], endata["经度(°)"], endata["震级(M)"]):
-    print(message
-          .replace("$_1", f"{float(_1):.6f}")
-          .replace("$_2", f"{float(_2):.6f}")
-          .replace("$_3", f"{float(_3):.1f}")
-         )
+    _R3 += message.replace("$_1", f"{float(_1):.6f}").replace("$_2", f"{float(_2):.6f}").replace("$_3", f"{float(_3):.1f}")
 
 message = f"""
 # 无震预测 No earthquake prediction
 check_my_prediction(myToken, '{day1}', '{day7}', 0)
 """
-print(message)
+_R3 += message
 print()
+
+
+#
+with open("../README.md", "w") as f:
+    f.write(
+        README
+        .replace("$1.1$", _R1)
+        .replace("$1.2$", _R2)
+        .replace("$1.3$", _R3)
+    )
+
