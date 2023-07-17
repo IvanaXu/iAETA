@@ -37,7 +37,7 @@ for nRow, iRow in enumerate(Row):
 
 data = pd.DataFrame(data, columns=cols)
 print(data.dtypes)
-print(data.head(T))
+print(data.head(T).to_markdown())
 
 
 def regeo(location):
@@ -149,7 +149,7 @@ endata = pd.merge(
     pd.concat(Kdata),
     on="参考位置"
 ).sort_values("#发震时刻#", ascending=False)
-print(endata.to_string())
+print(endata.to_markdown())
 
 
 #
