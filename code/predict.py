@@ -185,7 +185,7 @@ endata = pd.merge(
     on="参考位置"
 ).sort_values("#发震时刻#", ascending=False)
 print(endata.to_markdown())
-_R2 = endata.to_markdown()
+_R2 = endata.to_string()
 
 
 #
@@ -209,6 +209,7 @@ message = f"""
 check_my_prediction(myToken, '{day1}', '{day7}', 0)
 """
 _R3 += message
+print(_R3)
 print()
 
 
