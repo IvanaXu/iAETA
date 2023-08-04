@@ -56,16 +56,16 @@ iAETA (基于大数据与AI的地震临震预测)
 ```shell
 
 # 有震预测 earthquake prediction
-check_my_prediction(myToken, '2023-08-05', '2023-08-11', 1, latitude=28.145083, longitude=102.402417, magnitude=3.8)
+check_my_prediction(myToken, '2023-08-06', '2023-08-12', 1, latitude=28.145083, longitude=102.402417, magnitude=3.8)
 
 # 有震预测 earthquake prediction
-check_my_prediction(myToken, '2023-08-05', '2023-08-11', 1, latitude=29.557813, longitude=102.538299, magnitude=3.6)
+check_my_prediction(myToken, '2023-08-06', '2023-08-12', 1, latitude=29.557813, longitude=102.538299, magnitude=3.6)
 
 # 有震预测 earthquake prediction
-check_my_prediction(myToken, '2023-08-05', '2023-08-11', 1, latitude=27.699537, longitude=102.304907, magnitude=3.7)
+check_my_prediction(myToken, '2023-08-06', '2023-08-12', 1, latitude=27.699537, longitude=102.304907, magnitude=3.7)
 
 # 无震预测 No earthquake prediction
-check_my_prediction(myToken, '2023-08-05', '2023-08-11', 0)
+check_my_prediction(myToken, '2023-08-06', '2023-08-12', 0)
 
 ```
 
