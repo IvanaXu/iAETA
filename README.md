@@ -148,7 +148,7 @@ iAETA (基于大数据与AI的地震临震预测)
 ```shell
 
 # 无震预测 No earthquake prediction
-check_my_prediction(myToken, '2024-02-03', '2024-02-09', 0)
+check_my_prediction(myToken, '2024-02-04', '2024-02-10', 0)
 
 ```
 
