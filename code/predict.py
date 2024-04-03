@@ -221,7 +221,8 @@ with open("../README.md", "w") as f:
         .replace("$1.2$", _R2)
         .replace("$1.3$", _R3)
     )
-    f.write("""\n
+    f.write("""\n\n
+
     <div align=center>
 
     [![IvanaXu/iAETA](https://gitee.com/IvanaXu/iAETA/widgets/widget_card.svg?colors=4183c4,ffffff,ffffff,e3e9ed,666666,9b9b9b)](https://gitee.com/IvanaXu/iAETA)
